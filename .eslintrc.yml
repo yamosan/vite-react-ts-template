@@ -9,6 +9,8 @@ parserOptions:
 settings:
   react:
     version: detect
+  import/resolver:
+    typescript: []
 extends:
   - eslint:recommended
   - plugin:@typescript-eslint/recommended
@@ -27,9 +29,9 @@ rules:
   "@typescript-eslint/consistent-type-imports": [warn, { prefer: type-imports }]
   "@typescript-eslint/no-unused-vars":
     [error, { varsIgnorePattern: "^_", argsIgnorePattern: "^_" }]
+  react/prop-types: off
   react/self-closing-comp: error
   react/jsx-curly-brace-presence: error
   react/jsx-pascal-case: error
   import/order:
     [error, { newlines-between: always, warnOnUnassignedImports: true }]
-  import/no-relative-parent-imports: error
