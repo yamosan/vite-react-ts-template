@@ -3,9 +3,10 @@ root: true
 env:
   es6: true
   browser: true
+  node: true
 parser: "@typescript-eslint/parser"
 parserOptions:
-  project: "./tsconfig.json"
+  project: "./tsconfig.eslint.json"
 settings:
   react:
     version: detect
@@ -36,3 +37,7 @@ rules:
   react/jsx-pascal-case: error
   import/order:
     [error, { newlines-between: always, warnOnUnassignedImports: true }]
+overrides:
+  - files:
+      ["**/__tests__/**/*.+(ts|tsx|js)", "**/?(*.)+(spec|test).+(ts|tsx|js)"]
+    extends: ["plugin:testing-library/react"]
